@@ -23,7 +23,7 @@
 </details>
 
 <details>
-<summary><b>09/15 (TUE) - 파이썬 기초 문법</b></summary>
+<summary><b>09/16 (WED) - 파이썬 기초 문법</b></summary>
 
 - 변수와 식별자 명명 규칙
 - 기본 자료형 (int, float, str, bool)
