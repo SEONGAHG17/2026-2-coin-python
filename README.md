@@ -1,14 +1,16 @@
 # 2026-02-coin-python
 
-## 📁 1. 폴더 구조 (Directory Structure)
+## 📁 1. Directory Structure
 
 ```text
 2026-02-coin-python/
 ├── example/    # 교육 중 진행할 실습 내용 및 참고 자료
 ├── quiz/       # 과제 및 문제 풀이
 └── remedial/   # 보충 및 추가 개념 학습 자료
+```
 
-## 📅 학습 계획 상세
+## 📅 2. Plan
+
 
 <details>
 <summary><b>09/14 (MON) - OT, Base, Test</b></summary>
