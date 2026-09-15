@@ -9,7 +9,11 @@
 ├── quiz/         # 과제 및 문제 풀이
 └── remedial/     # 보충 및 추가 개념 학습 자료
 ```
-
+<detail>
+<summary> remedial folder structure</summary>
+- remedial01.py : 주석ㅡ변수ㅡ식별자ㅡ자료형ㅡ인덱싱/슬라이싱ㅡ연산자
+- remedial02.py :
+</detail>
 
 ## 📅 2. Plan
 
