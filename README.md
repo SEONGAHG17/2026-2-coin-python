@@ -15,12 +15,12 @@
 | 파일명 | 내용 |
 | :--- | :--- |
 | `remedial01.py` | 주석, 변수, 식별자, 자료형, 인덱싱/슬라이싱, 연산자 |
-| `remedial02.py` | 조건문 (if, elif, else) 및 조건 연산자 |
-| `remedial03.py` | 반복문 (for, while) 및 흐름 제어 (break, continue) |
-| `remedial04.py` | 함수 (정의, 매개변수, 반환값, 람다식) |
-| `remedial05.py` | 리스트, 튜플, 딕셔너리, 세트 등 자료구조 심화 |
-| `remedial06.py` | 파일 입출력 (File I/O) 및 예외 처리 (try, except) |
-| `remedial07.py` | 클래스 (Class) 및 객체 지향 프로그래밍 (OOP) 기초 |
+| `remedial02.py` | 제어문 및 리스트 컴프리핸션 |
+| `remedial03.py` | 함수, 제네레이터 |
+| `remedial04.py` | 예외처리, 파일 입출력 |
+| `remedial05.py` | 클래스 |
+| `remedial06.py` | OOP |
+| `remedial07.py` | 모듈 |
 
 </details>
 
