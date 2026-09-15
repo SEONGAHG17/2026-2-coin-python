@@ -44,4 +44,73 @@ PRIVATE SYNONYM : 특정 사용자만 접근 가능한 것
 - 시퀸스 값을 함호화 하는 방식은 제공하지 않는다
 
 # 7번 문항 : 2번
+파티션 : 테이블에 있는 특정 컬럼 값을 기준으로 데이터를 분할해 저장해 놓은 것
+파티션 테이블을 만드는 목적 : 대용량의 테이블의 경우 데이터 조회 시 효율성과 성능을 높이기 위한 것
+
+# 8번 문항 : 3번
+- 특정 열에 고유한 값 보장 : 유니크키, 기본키의 제약조건이다
+- 참조 무결성 유지 : 외래키의 제약 조건
+
+CHECK 제약 조건 : 열에 입력될 수 있는 값의 허용범위, 특정 논리 조건을 정의해 유효하지 않은 데이터의 유입을 방지하는 것
+
+# 9번 문항
+CREATE TABLE emp (
+    emp_id NUMBER PRIMARY KEY,
+    emp_name VARCHAR2(50) NOT NULL,
+    dept_id NUMBER,
+    salary NUMBER CHECK (salary >= 0)
+);
+
+# 10번문항
+CREATE TABLE dept (
+    dept_id NUMBER PRIMARY KEY,
+    dept_name VARCHAR2(50) NOT NULL
+);
+
+# 11번문항
+ALTER TABLE emp
+ADD CONSTRAINT fk_emp_dept FOREIGN KEY (dept_id)
+REFERENCES dept (dept_id);
+
+# 12번문항
+ALTER TABLE emp
+ADD CONSTRAINT uk_emp_name UNIQUE (emp_name);
+
+# 13번문항
+CREATE SEQUENCE emp_seq
+START WITH 1
+INCREMENT BY 1;
+
+# 14번문항
+ALTER SEQUENCE emp_seq
+INCREMENT BY 2
+MAXVALUE 1000
+CYCLE;
+
+# 15번문항
+CREATE INDEX idx_emp_comp ON emp (emp_id, emp_name);
+
+# 16번문항
+CREATE PUBLIC SYNONYM emps FOR employees;
+
+# 17번문항
+CREATE TABLE emp_backup AS
+SELECT * FROM employees;
+
+# 18번문항
+CREATE VIEW high_salary_view AS
+SELECT *
+FROM employees
+WHERE salary >= 12000
+WITH CHECK OPTION;
+
+
+
+
+
+
+
+
+
+
 
