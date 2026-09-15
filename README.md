@@ -11,7 +11,7 @@
 ```
 <details>
 <summary> remedial folder structure</summary>
-- remedial01.py : 주석ㅡ변수ㅡ식별자ㅡ자료형ㅡ인덱싱/슬라이싱ㅡ연산자
+- remedial01.py : `주석ㅡ변수ㅡ식별자ㅡ자료형ㅡ인덱싱/슬라이싱ㅡ연산자`
 - remedial02.py :
 </details>
 
