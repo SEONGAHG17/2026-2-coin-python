@@ -14,6 +14,23 @@ a++
 */
 
 
+/*
+int x = 5;
+S.O.P(++x); // x에 1을 더한다 >> 출력한다. # print value) 6, X value) 6
+	// x = x + 1
+	// S.O.P(x)
+
+int y = 9;
+S.O.P(y++); // y 값을 먼저 출력하고 >> y = y+1 을 진행한다 # print value)5, Y value)6
+S.O.P(y);	// 위 명령에서 y값이 6이 되었으므로, 출력하면 6!
+	// S.O.P(y)
+	// y = y + 1
+
+
+*/
+
+
+
 
 // 1.기본적인 증감연산자
 public class Main {
