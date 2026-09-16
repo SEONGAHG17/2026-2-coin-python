@@ -36,10 +36,27 @@
 </details>
 
 <details>
-<summary><b>09/16 (WED) - 파이썬 기초 문법</b></summary>
+<summary><b>09/15 (TUE) - PYTHON</b></summary>
 
 - 변수와 식별자 명명 규칙
-- 기본 자료형 (int, float, str, bool)
-- 인덱싱과 슬라이싱, 연산자 활용
+- 기본 자료형 & 컨테이너 자료형
+- 데이터 분류 체계
+- 자료형의 메서드 
+- 인덱싱과 슬라이싱
+- 연산자, 연산자 우선순위
 - 과제: `quiz/day02`
+</details>
+
+<details>
+<summary><b>09/16 (WED) - REMIND & PYTHON</b></summary>
+
+- remind) mutable - Immutable / Iterable / Hashable
+- remind) set vs frozenset
+- 순차문 vs 제어문
+- 조건문 
+- 반복문 (for / while)
+- break / continue
+- 별찍기 / 달팽이 / 가위바위보
+- List Comprehension
+- 과제: `quiz/day03`
 </details>
