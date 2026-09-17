@@ -63,4 +63,21 @@ print(low)   # 출력: 8
 print(high)  # 출력: 99
 
 
+# [데이터] (보낸사람, 보낸시간, 메시지내용) 형태로 패킹된 채팅 데이터
+chat_data = ("철수", "14:30", "오늘 파이썬 수업 몇 시야?")
+# [언패킹] 하나의 튜플 데이터를 의미 있는 개별 변수로 쏙쏙 풀기
+sender, timestamp, message = chat_data
+# 결과 확인
+print(f"[{timestamp}] {sender}님의 메시지: {message}")
+# 출력 -> [14:30] 철수님의 메시지: 오늘 파이썬 수업 몇 시야?
+
+
+
+raw_log = "영희:안녕!"
+# ":" 기준으로 쪼개어 바로 언패킹
+user, text = raw_log.split(":")
+print(f"{user}가 보낸 말: {text}")
+# 출력 -> 영희가 보낸 말: 안녕!
+
+
 
