@@ -27,7 +27,7 @@ print(num5)
 
 
 
-# 다중 할당 주의점 !!(불변/가변 이슈)
+# 동일 할당 주의점 !!(불변/가변 이슈)
 immutable1 = imutablie2 = 0
 
 mutable1 = mutable2 = []
