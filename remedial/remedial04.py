@@ -96,7 +96,7 @@ with open("student_data.txt", "w", encoding="utf-8") as file:
 # 파일 읽기 메서드 비교:
 # 1) read(): 파일 전체를 하나의 문자열로 반환
 # 2) readline(): 한 줄씩 문자열로 반환
-# 3) readlines(): 모든 줄을 읽어 각 줄이 요소인 리스트로 반환[cite: 2]
+# 3) readlines(): 모든 줄을 읽어 각 줄이 요소인 리스트로 반환
 with open("student_data.txt", "r", encoding="utf-8") as file:
     lines = file.readlines()
     print("[with문으로 파일 읽기]")
