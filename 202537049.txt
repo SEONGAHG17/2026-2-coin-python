@@ -1,0 +1,156 @@
+01번 문항
+TRUNC(number, 소숫점 자리 수)형태의 인자를 지녀 동작하는 함수로,
+해당 number에 대해 작성된 소수점 아래 자리 수 까지의 값을 반환한다
+
+45.926을 소수점 아래 1째 짜리 까지 나타내어지므로, 45.9가 된다
+
+
+02번 문항
+LPAD(문자열, 자릿 수, 집어 넣을 무언가)형태의 인지를 지녀 동작하는 함수로,
+기존 제공받은 문자열을 기준으로 왼쪽에서부터 무언가를 계속 집어넣어 해당 자릿수를 지닌 결과를 도출한다
+
+기존문자 "SQL"에다 *을 왼쪽부터 삽입하는데, 이때 5자리 수를 최종적으로 만들면 되므로,
+"**SQL"이 된다
+
+
+
+03번 문항
+REPLACE("기존 문자열",바꿈당할 값, 바꿀 값)형태의 인자를 지녀 동작하는 함수로,
+기존문자열에서 바꿈당할 값을 찾아 제공한 값으로 바꿔 결과를 도출한다
+
+"DATABASE"라는 문자열에서 'A'를 'O'로 변경하는 것으로
+"DOTOBOSE"가 된다
+
+
+
+
+04번 문항
+MONTH_BETWEEN(DAY01, DAY02)형태의 인자를 지녀 동작하는함수로,
+DAY02가 DAY01보다 빠른 날짜로 구성된다
+해당 함수는 두 날짜간 개월수 차이를 결과로 반환한다.
+
+MONTH_BETWEEN(DATE '2025-06-01', DATE '2025-03-01')
+따라서 3이 결과값이다
+
+
+05번 문항
+NEXT_DATE(날짜, '요일')형태의 인자를 지녀 동작하는 함수로,
+인자로 입력한 날짜 이후의 인자로 입력한 해당 요일의 날짜를 결과로 도출한다.
+
+NEXT_DATE(DATE '2025-09-18', 'MONDAY')은 25년 0918 이후의 다음 월요일의 날짜를 결과로 도출하므로
+2025-09-22가 결과값이다
+
+
+
+
+
+06번 문항
+TO_DATE('날짜', '형식')형태의 인자를 지녀 동작하는 함수로,
+인자로 받은 날짜를 요구한 형식에 맞게 도출해낸다.
+
+이때 해당 결과값의 자료형은 DATE타입이다
+
+
+
+
+
+07번 문항
+NVL2(expr1, expr2, expr3)형태의 인자를 지녀 동작하는 함수로,
+expr1이 null이면 expr2를, null이 아니면 expr3을 결과로 도출하라는 기능이다
+
+NVL2(null, 'A', 'B') 이므로 첫 인자가 null이기에, 도출되는 결과가 'A'이다
+
+
+
+
+08번 문항
+ROLLUP(A, B)형태의 인자를 지녀 동작하는 함수로,
+각 계층별로 집계한 결과가 반환된다.
+
+ROLLUP(부서, 직급)이므로 각 부서별, 직급별 합계와 부서별 소계, 전체 합계를 표시하는 결과를 도툴한다
+
+
+
+
+09번 문항
+SELECT employee_id, emp_name, salary FROM employees
+WHERE SUBSTR(emp_name, 3, 1) = 'a';
+
+--gemini
+SELECT employee_id, emp_name, salary 
+FROM employees
+WHERE INSTR(emp_name, 'a', 3, 1) = 3;
+
+SELECT employee_id, emp_name, salary 
+FROM employees
+WHERE emp_name LIKE '__a%';
+
+INSTR(문자열, 'a', 3, 1)은 3번째 글자부터 시작해 첫 번째로 나오는 'a'의 위치를 반환하므로, 그 결과가 3인 행을 필터링합니다.
+LIKE '__a%'는 언더스코어(_) 두 개를 이용해 앞의 2글자를 건너뛰고 3번째 자리에 'a'가 오는 패턴을 찾습니다.
+
+
+
+10번 문항
+SELECT country_region, COUNT(*) AS "국가 수" FROM countries
+GROUP BY country_region
+HAVING COUNT(*) >= 5
+ORDER BY "국가 수" DESC;
+
+--gemini
+SELECT country_region, COUNT(*) AS "국가 수" 
+FROM countries
+GROUP BY country_region
+HAVING COUNT(*) >= 5
+ORDER BY 2 DESC;
+
+ORDER BY "국가 수" DESC 대신 ORDER BY 2 DESC를 사용하여 SELECT 절의 두 번째 컬럼을 기준으로 내림차순 정렬
+작성하신 쿼리는 별칭("국가 수")을 명시하여 직관적이고 가독성이 좋습니다.
+대안 쿼리는 컬럼 순번(Position)을 사용하여 코드를 간결하게 줄일 수 있다는 차이가 있습니다.
+
+
+11번 문항
+SELECT department_id AS "부서번호", TRUNC(AVG(salary)) AS "평균급여" FROM employees
+WHERE commission_pct IS NOT NULL
+GROUP BY department_id;
+
+--gemini
+SELECT department_id AS "부서번호", FLOOR(AVG(salary)) AS "평균급여" 
+FROM employees
+WHERE commission_pct IS NOT NULL
+GROUP BY department_id;
+
+소수점 이하 버림에 TRUNC 대신 FLOOR(바닥 함수)를 사용합니다. 급여처럼 양수 데이터일 때는 소수점 이하를 버려 정수로 만드는 동작이 동일
+작성하신 쿼리의 TRUNC는 오라클 SQL에서 특정 자리수 이하 절삭(버림)을 수행할 때 가장 널리 쓰이는 표준 함수입니다.   
+FLOOR는 음수일 때 값이 더 작아지는 특성이 있으나, 양수 급여 데이터에서는 동일한 결과를 반환하는 대안 함수입니다.
+
+
+
+12번 문항
+SELECT TO_CHAR(hire_date, 'YY') || '년' AS "입사년도", COUNT(*) || '명 입사' AS "입사 인원" FROM employees
+GROUP BY TO_CHAR(hire_date, 'YY')
+HAVING COUNT(*) >= 5
+ORDER BY COUNT(*) DESC;
+
+--gemini
+SELECT hire_year || '년' AS "입사년도", hire_cnt || '명 입사' AS "입사 인원"
+FROM (
+    SELECT TO_CHAR(hire_date, 'YY') AS hire_year, COUNT(*) AS hire_cnt
+    FROM employees
+    GROUP BY TO_CHAR(hire_date, 'YY')
+    HAVING COUNT(*) >= 5
+)
+ORDER BY hire_cnt DESC;
+
+내부 서브쿼리(Inline View)에서 연도 추출('YY')과 집계/필터링(HAVING >= 5)을 먼저 수행하고, 
+바깥 SELECT 문에서 문자열 결합(|| '년', || '명 입사') 및 정렬을 분리하여 처리
+
+작성하신 쿼리는 단일 쿼리 블록에서 결합과 집계를 한 번에 처리하여 코드가 간결합니다.
+대안 쿼리는 서브쿼리를 사용해 "데이터 가공(집계)"과 "화면 표시 포맷팅(문자열 붙이기)"을 분리함으로써, 
+쿼리가 길어지거나 복잡해질 때 유지보수성과 가독성을 높일 수 있는 구조적 차이가 있습니다.
+
+
+
+
+
+
+
