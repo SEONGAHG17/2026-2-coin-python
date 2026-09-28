@@ -1,3 +1,5 @@
+https://www.perplexity.ai/search/7832b7c6-8325-4494-bb34-f980bfdde101
+
 01번 문항
 TRUNC(number, 소숫점 자리 수)형태의 인자를 지녀 동작하는 함수로,
 해당 number에 대해 작성된 소수점 아래 자리 수 까지의 값을 반환한다
